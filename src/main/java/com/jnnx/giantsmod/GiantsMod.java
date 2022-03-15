@@ -1,5 +1,6 @@
 package com.jnnx.giantsmod;
 
+import com.jnnx.giantsmod.core.init.EntityInit;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -18,13 +19,13 @@ public class GiantsMod {
     public GiantsMod() {
         //Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        //Register the enqueueIMC method for modloading
-//        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        //Register the processIMC method for modloading
-//        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-
         //Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+
+        var bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        EntityInit.ENTITIES.register(bus);
     }
 
     private void setup(final FMLCommonSetupEvent event){
