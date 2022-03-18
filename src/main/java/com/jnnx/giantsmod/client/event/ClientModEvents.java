@@ -1,7 +1,6 @@
 package com.jnnx.giantsmod.client.event;
 
 import com.jnnx.giantsmod.GiantsMod;
-import com.jnnx.giantsmod.client.renderer.GiantLargeEntityModel;
 import com.jnnx.giantsmod.client.renderer.GiantLargeEntityRenderer;
 import com.jnnx.giantsmod.common.entity.GiantLargeEntity;
 import com.jnnx.giantsmod.core.init.EntityInit;
@@ -15,10 +14,10 @@ public class ClientModEvents {
 
     private ClientModEvents() {}
 
-    @SubscribeEvent
-    public  static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(GiantLargeEntityModel.LAYER_LOCATION, GiantLargeEntityModel::createBodyLayer);
-    }
+//    @SubscribeEvent
+//    public  static void clientSetup(EntityRenderersEvent.RegisterLayerDefinitions event) {
+//        event.registerLayerDefinition(GiantLargeEntityModel.LAYER_LOCATION, GiantLargeEntityModel::createBodyLayer);
+//    }
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
