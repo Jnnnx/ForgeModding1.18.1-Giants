@@ -21,6 +21,6 @@ public class EntityInit {
 
     public static final RegistryObject<EntityType<GiantLargeEntity>> GIANT_LARGE_ENTITY = ENTITIES.register("giant_large_entity",
             () -> EntityType.Builder.of(GiantLargeEntity::new, MobCategory.MONSTER)
-                    .sized(0.8f, 1.8f)
+                    .sized(1.5F, 5.25F)
                     .build(new ResourceLocation(GiantsMod.MODID, "giant_large_entity").toString()));
 }
