@@ -35,9 +35,12 @@ public class GiantLargeEntityRenderer<Type extends GiantLargeEntity> extends Abs
 ////        this(context, ModelLayers.ZOMBIE, ModelLayers.ZOMBIE_INNER_ARMOR, ModelLayers.ZOMBIE_OUTER_ARMOR);
 //    }
 
+    public static Float scaleWidth = 4f;
+    public static Float scaleHeight = 4f;
+    public static Float scaleZaxis = 4f;
+
     public GiantLargeEntityRenderer(EntityRendererProvider.Context context){
         this(context, ModelLayers.ZOMBIE, ModelLayers.ZOMBIE_INNER_ARMOR, ModelLayers.ZOMBIE_OUTER_ARMOR);
-//        this.scale = 2f;
     }
     public GiantLargeEntityRenderer(EntityRendererProvider.Context context, ModelLayerLocation layer, ModelLayerLocation legsArmorLayer, ModelLayerLocation bodyArmorLayer){
         super(context, new ZombieModel(context.bakeLayer(layer)), new ZombieModel(context.bakeLayer(legsArmorLayer)), new ZombieModel(context.bakeLayer(bodyArmorLayer)));
@@ -45,7 +48,7 @@ public class GiantLargeEntityRenderer<Type extends GiantLargeEntity> extends Abs
 
     public void render(Type a, float b, float c, PoseStack d, MultiBufferSource e, int f){
 
-        d.scale(2,2,2);
+        d.scale(scaleWidth,scaleHeight,scaleZaxis);
         super.render(a,b,c,d,e,f);
     }
 

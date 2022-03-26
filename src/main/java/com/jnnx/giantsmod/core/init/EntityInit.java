@@ -1,6 +1,7 @@
 package com.jnnx.giantsmod.core.init;
 
 import com.jnnx.giantsmod.GiantsMod;
+import com.jnnx.giantsmod.client.renderer.GiantLargeEntityRenderer;
 import com.jnnx.giantsmod.common.entity.GiantLargeEntity;
 import net.minecraft.ResourceLocationException;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,6 @@ public class EntityInit {
 
     public static final RegistryObject<EntityType<GiantLargeEntity>> GIANT_LARGE_ENTITY = ENTITIES.register("giant_large_entity",
             () -> EntityType.Builder.of(GiantLargeEntity::new, MobCategory.MONSTER)
-                    .sized(1.5F, 5.25F)
+                    .sized(0.6F* GiantLargeEntityRenderer.scaleWidth/1.5F, 1.95F*GiantLargeEntityRenderer.scaleHeight)
                     .build(new ResourceLocation(GiantsMod.MODID, "giant_large_entity").toString()));
 }
